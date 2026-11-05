@@ -21,7 +21,6 @@ router.get("/:id", obtenerCuenta);
 
 router.patch("/:id/estado", cambiarEstadoCuenta);
 
-router.get("/:id/movimientos", listarMovimientos);
 router.post("/:id/ingresos", ingresarDinero);
 router.post("/:id/retiradas", retirarDinero);
 
