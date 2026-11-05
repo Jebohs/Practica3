@@ -2,7 +2,7 @@
 import { ObjectId } from "mongodb";
 
 export type TipoCuenta = "corriente" | "ahorro";
-export type EstadoCuenta = "activa" | "bloqueda" | "cerrada"
+export type EstadoCuenta = "activa" | "bloqueada" | "cerrada"
 
 export interface CuentasT {
     _id?: ObjectId;
