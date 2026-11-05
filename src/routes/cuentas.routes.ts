@@ -22,11 +22,7 @@ router.get("/:id", obtenerCuenta);
 router.patch("/:id/estado", cambiarEstadoCuenta);
 
 router.get("/:id/movimientos", listarMovimientos);
-
-// Ingresar dinero
 router.post("/:id/ingresos", ingresarDinero);
-
-// Retirar dinero
 router.post("/:id/retiradas", retirarDinero);
 
 export default router;
