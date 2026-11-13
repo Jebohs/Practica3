@@ -14,8 +14,8 @@ API REST desarrollada con **TypeScript** y **MongoDB** que gestiona clientes, cu
 ## Instalación de dependencias
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd <NOMBRE_DEL_PROYECTO>
+git clone https://github.com/Jebohs/Practica3
+cd Practica3
 npm install
 ```
 
