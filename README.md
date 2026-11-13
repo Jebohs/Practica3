@@ -92,19 +92,6 @@ Api funcionando en el puerto 3001
 
 ## Cómo probar la API
 
-Hay tres formas, todas con las mismas peticiones. Con el servidor arrancado:
-
-### Postman
-
-1. **Import** → selecciona `postman_collection.json`.
-2. Clic derecho sobre la colección → **Run collection** → **Run**.
-
-Cada petición comprueba su código de estado esperado y guarda ids e IBAN en variables para las siguientes, así que hay que ejecutarlas en orden. La URL base se cambia en la pestaña *Variables* de la colección (`baseUrl`, por defecto `http://localhost:3001`).
-
-### VS Code (REST Client)
-
-Instala la extensión *REST Client* (Huachao Mao), abre `requests.http` y pulsa **Send Request** sobre cada petición, de arriba abajo.
-
 ### curl
 
 Ejemplo básico:
@@ -275,11 +262,6 @@ bloqueada → cerrada
 | Conflicto de negocio (duplicados, saldo insuficiente, límite, estado)     | 409    |
 | Error inesperado                                                          | 500    |
 
-Los errores devuelven siempre:
-
-```json
-{ "error": "Mensaje descriptivo del problema" }
-```
 
 ## Estructura del proyecto
 
@@ -292,6 +274,4 @@ src/
 ├── utils/         # Funciones auxiliares (IBAN, validaciones...)
 └── index.ts       # Punto de entrada
 .env.example       # Variables de entorno de ejemplo
-requests.http      # Peticiones de prueba (REST Client)
-postman_collection.json  # Colección de Postman con tests
 ```
