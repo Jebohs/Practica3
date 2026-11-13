@@ -9,12 +9,15 @@ import clientesRoutes from "./routes/clientes.routes.js";
 
 import { configClientesCollection } from "./controllers/clientes.controller.js";
 
+import movimientosRoutes from "./routes/movimientos.routes.js";
+
 import type { Collection } from "mongodb";
 import type { ClienteT } from "./models/clientes.model.js";
 
 const app = express();
 
 app.use(express.json());
+
 
 const startServer = async () => {
     try {

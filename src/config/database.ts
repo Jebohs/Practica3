@@ -1,19 +1,13 @@
+import { Db, MongoClient } from "mongodb";
 
-import { MongoClient, Db } from "mongodb";
+export const connectMongo = (): Promise<Db> => {
+  const client = new MongoClient(process.env.MONGO_URI as string);
 
-const uri = process.env.MONGO_URI;
-const dbName = process.env.MONGO_DB;
-
-if (!uri || !dbName) {
-    throw new Error("Faltan variables de entorno de MongoDB");
-}
-
-const client = new MongoClient(uri);
-
-export const connectMongo = async (): Promise<Db> => {
-    await client.connect();
-
-    console.log("Conectado a MongoDB");
-
-    return client.db(dbName);
+  return client.connect().then(() => {
+    console.log("Conectado al Monguito");
+    return client.db(process.env.DB_NAME);
+  }).catch((error) => {
+    console.log("Error al conectar con Mongo");
+    throw error;
+  });
 };
